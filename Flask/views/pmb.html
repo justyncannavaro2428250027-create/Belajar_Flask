@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+
+{% block content %}
+<form action="/pendaftaran" method="post">
+    <div class="form-group">
+        <label for="name">Nama</label>
+        <input type="text" name="nama" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="tempatLahir">Tempat Lahir</label>
+        <input type="date" name="tempatLahir" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="tanggalLahir">Tanggal Lahir</label>
+        <input type="date" name="tanggalLahir" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="asalSekolah">Asal Sekolah</label>
+        <input type="text" name="asalSekolah" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="nohp">Nomor Handphone</label>
+        <input type="text" name="nohp" class="form-control">
+    </div>
+        <div class="form-group">
+        <label for="foto">Upload Foto</label>
+        <input type="file" name="foto" class="form-control">
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-2">Kirim
+    </button>
+</form>
+{% endblock %}
