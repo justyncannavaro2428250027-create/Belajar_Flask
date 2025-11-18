@@ -4,6 +4,8 @@ from turtle import title
 from urllib import request
 from flask import Flask, render_template
 from flask import request
+import os
+import time
 
 # create an instance of the Flask class
 app = Flask(__name__, template_folder='views')
@@ -32,8 +34,22 @@ def contact():
     title = "Contact Page"
     return render_template('contact.html', title = title)
 
-@app.route('/pendaftaran')
+@app.route('/pendaftaran', methods = ['GET', 'POST'])
 def pmb():
+    if request.method == 'POST':
+        #ambil data dari form pendaftaran
+        nama = request.form['nama']
+        email = request.form['email']
+        tempat_lahir = request.form['tempatLahir']
+        tanggal_lahir = request.form['tanggalLahir']
+        asal_sma = request.form['asalSekolah']
+        foto = request.files['foto']
+
+        #upload foto ke folder 'uploads'
+        foto.save(f'static/uploads/{foto.filename}')
+
+        #Tampilkan pada terminal
+        print(f'Nama: {nama}, Email: {email}, Tempat Lahir: {tempat_lahir}, Tanggal Lahir: {tanggal_lahir}, Asal SMA : {asal_sma}, Foto: {foto.filename}')
     title = "Pendaftaran Mahasiswa Baru"
     return render_template('pmb.html', title = title)
 # run the application
