@@ -53,5 +53,5 @@ def predict_diabetes():
     except Exception as e:
         return jsonify({'error': str(e)}), 400
     # Jalankan aplikasi Flask
-    if __name__ == '__main__':
-        app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
