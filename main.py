@@ -2,6 +2,7 @@ import pandas as pd
 import pickle
 from flask import Flask, request, jsonify
 from flask_cors import CORS # Import Flask-CORS
+
 # Membuat aplikasi Flask
 app = Flask(__name__)
 # Aktifkan CORS
