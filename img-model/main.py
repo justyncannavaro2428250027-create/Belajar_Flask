@@ -14,7 +14,7 @@ CORS(app)
 
 # Load model yang sudah dilatih
 try:
-    model = load_model("model_guntingbatukertas.keras")  # Memuat model .keras
+    model = load_model("model_gbk_new.keras")  # Memuat model .keras
 except Exception as e:
     # Jika terjadi kesalahan saat memuat model, berikan error
     raise ValueError(f"Error loading model: {str(e)}")
